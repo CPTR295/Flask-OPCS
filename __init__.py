@@ -1,0 +1,1 @@
+import __main__ # For package initialization and circular import resolution

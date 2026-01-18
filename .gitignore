@@ -1,0 +1,17 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+*.pyo
+
+# Environment variables
+.env
+
+# Virtual environments
+venv/
+opcs/
+
+# Testing cache
+.pytest_cache/
+
+# Databases
+*.sql
