@@ -73,3 +73,17 @@ def select_single_question_pool(conn,id:int):
         cur.close()
         print(f"Error selecting single question pool: {e}")
     return None
+
+@connect_db
+def get_current_id(conn):
+    try:
+        cur = conn.cursor()
+        sql = 'SELECT id from question_pool ORDER BY id DESC LIMIT 1'
+        cur.execute(sql)
+        row = cur.fetchall()
+        cur.close()
+        return row
+    except Exception as e:
+        cur.close()
+        print(f"Error getting current id: {e}")
+    return None
