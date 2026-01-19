@@ -43,3 +43,4 @@ def show_honor_dissmisal(counselor:str,effective_date:date,patient:str):
             </html>
         '''.format(counselor,effective_date,patient,patient,counselor) 
     return letter,200
+
