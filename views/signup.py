@@ -21,7 +21,7 @@ def signup_users_submit():
     insert_signup(user=username,passw=password,utype=user_type,fname=firstname,lname=lastname,cid=cid)
     return render_template('add_signup_submit.html',message = 'Added New User'),200
 
-@app.route('/signup.list',methods=['GET'])
+@app.route('/signup/list',methods=['GET'])
 def signup_list_users():
     candidates = select_all_signup()
     return render_template('reports/list_candidates.html',candidates=candidates),200 

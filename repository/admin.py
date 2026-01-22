@@ -74,7 +74,7 @@ def select_single_admin(conn,id:int):
     return None
 
 @connect_db
-def admin_admin_join_user(conn):
+def select_admin_join_user(conn):
     try:
         cur = conn.cursor()
         sql = 'SELECT * from admin a inner join all_user u on a.id = u.id'

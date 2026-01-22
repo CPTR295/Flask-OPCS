@@ -29,7 +29,7 @@ class ContractView(MethodView):
     
 class ListUnpaidContractView(View):
     def dispatch_request(self):
-        contracts = select_all_unpaid_patient
+        contracts = select_all_unpaid_patient()
         return render_template("contract/list_patient_contract.html",contracts=contracts)
     
 class DeleteContractByPIDView(View):

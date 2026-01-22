@@ -2,7 +2,7 @@ from __main__ import app
 from flask import request,render_template,redirect,url_for,make_response
 from services.utility import list_cid,list_pid,list_qid
 from repository.question_details import insert_question_detail
-from services.patient_monitoring import record_patient_exam,list_patient_scores
+from services.patient_monitoring import record_patient_exam,list_passing_scores
 from services.exam_management import add_exam_items,list_exam_details 
 from uuid import uuid4
 
@@ -102,7 +102,7 @@ def report_exam_list():
 
 @app.route('/exam/passers/list/<float:rate>/<uuid:docId>')
 def report_exam_passers(rate:float,docId:uuid4=None):
-    exams = list_patient_scores(rate)
+    exams = list_passing_scores(rate)
     response = make_response(render_template('exam/list_exam_passers.html',exams=exams,docId=docId),200) 
     return response 
 

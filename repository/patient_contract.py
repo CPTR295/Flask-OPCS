@@ -6,7 +6,7 @@ from datetime import date
 def insert_patient_contract(conn,pid:int,approved_by:str,approved_date:date,hcp:str,payment_mode:str,amount_paid:float,amount_due:float):
     try:
         cur = conn.cursor()
-        sql = 'INSERT INTO patient_contract (pid,approved_by,approved_date,heath_care_provider,payment_mode,amount_paid,amount_due) VALUES (%s,%s,%s,%s,%s,%s,%s)'
+        sql = 'INSERT INTO patient_contract (pid,approved_by,approved_date,health_care_provider,payment_mode,amount_paid,amount_due) VALUES (%s,%s,%s,%s,%s,%s,%s)'
         values = (pid,approved_by,approved_date,hcp,payment_mode,amount_paid,amount_due)
         cur.execute(sql, values)
         cur.close()

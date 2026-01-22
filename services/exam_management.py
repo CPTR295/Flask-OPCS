@@ -4,7 +4,7 @@ from repository.question_subjective import insert_question_subjective
 from repository.question_details import select_all_question_detail
 from typing import Dict, Any, List
 
-def add_exam_item(qid:int,qtype:int,question:str,params:Dict[str,Any]=None,ans_essay:str=None,answers:List[str]=None) -> bool :
+def add_exam_items(qid:int,qtype:int,question:str,params:Dict[str,Any]=None,ans_essay:str=None,answers:List[str]=None) -> bool :
     try:
         insert_question_pool(question=question,type=qtype,qid=qid)
         curr_id = get_current_id()

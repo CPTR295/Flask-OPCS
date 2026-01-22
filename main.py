@@ -1,10 +1,10 @@
 from flask import Flask 
-from convertor.date_convertor import DateConvertor
+from converter.date_converter import DateConverter
 
 app = Flask(__name__,template_folder='pages') 
 app.config.from_pyfile('myconfig.py') 
 
-app.url_map.converters['date'] = DateConvertor
+app.url_map.converters['date'] = DateConverter
 
 @app.route('/')
 def index():
